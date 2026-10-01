@@ -369,6 +369,9 @@ app.get("/healthz", (req, res) => {
 | Server
 |--------------------------------------------------------------------------
 */
+app.get("/healthz", (req, res) => {
+  res.status(200).send("OK");
+});
 
 const HOST = "0.0.0.0";
 
