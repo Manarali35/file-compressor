@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Compressly — File Compressor</title>
+  <title>Compressly — Free Online PDF & Image Compressor</title>
+  <meta name="description" content="Compress PDF files and images online for free. Reduce file size quickly while keeping files easy to share.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://stay-bruised-bird.abasthan.app/">
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 
@@ -566,13 +569,63 @@
       line-height: 1.6;
     }
 
-    /* FOOTER */
+    /* CONTENT / FOOTER */
+
+    .content-section {
+      margin-top: 28px;
+      padding: 28px;
+      background: rgba(255,255,255,.9);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+    }
+
+    .content-section h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -.4px;
+    }
+
+    .content-section p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .content-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .content-links a,
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .content-links a:hover,
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
 
     .footer {
       text-align: center;
       margin-top: 25px;
       color: #9ca3af;
       font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 6px;
     }
 
     /* MOBILE */
@@ -1183,8 +1236,24 @@
 
   </main>
 
+  <section class="content-section" aria-labelledby="why-compressly">
+    <h2 id="why-compressly">Free online file compression</h2>
+    <p>Compressly helps you reduce the size of PDF documents and images without installing desktop software. PDF files are processed through our backend and CloudConvert, while image compression is handled in your browser.</p>
+    <div class="content-links">
+      <a href="/pdf-compression.html">How to compress a PDF</a>
+      <a href="/image-compression.html">How to compress an image</a>
+      <a href="/about.html">About Compressly</a>
+    </div>
+  </section>
+
   <footer class="footer">
-    Compressly • Image & PDF Compression
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>Compressly • Free PDF & Image Compression</div>
   </footer>
 
 </div>

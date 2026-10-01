@@ -1,11 +1,12 @@
 # File Compressor
 
-## Requirements
+Compress PDF files through the backend and CloudConvert, and compress supported images in the browser.
 
+## Run locally
+
+Requirements:
 - Node.js 18+
-- Ghostscript installed and available in PATH
-
-## Run
+- A CloudConvert API key for PDF compression
 
 Open a terminal inside `backend`:
 
@@ -14,30 +15,30 @@ npm install
 npm start
 ```
 
-Then open:
+Then open `http://localhost:3000`.
 
-http://localhost:3000
+## Deployment
 
-## Ghostscript
+The backend reads the deployment-provided `PORT` value and listens on `0.0.0.0`.
 
-Windows:
-- Install Ghostscript.
-- Make sure `gswin64c.exe` is available in PATH.
+Required environment variable:
 
-Linux:
-```bash
-sudo apt install ghostscript
-```
+- `CLOUDCONVERT_API_KEY`
 
-macOS:
-```bash
-brew install ghostscript
-```
+For the current Abasthan setup, use:
 
-## Notes
+- Root directory: `backend`
+- Build command: `npm install`
+- Start command: `npm start`
+- Health check: `/healthz`
 
-- Images are compressed in the browser.
-- PDFs are sent to the backend and processed by Ghostscript.
-- The backend deletes the uploaded input after processing.
-- The output is deleted after a download attempt.
-- This is a development-ready starter, not a production deployment. Before publishing publicly, add HTTPS, authentication if needed, rate limiting, stronger file validation, logging, resource limits, and a privacy policy.
+## Website information pages
+
+The frontend includes About, Privacy Policy, Terms of Service, Contact, PDF compression guidance, and image compression guidance. `robots.txt` and `sitemap.xml` are included for search-engine discovery.
+
+## Security notes
+
+- Never commit `backend/.env`.
+- Never publish a CloudConvert API key.
+- Uploaded PDF files are stored temporarily by the backend and the temporary input is deleted after processing.
+- Keep original files and do not treat the service as a backup system.
