@@ -662,6 +662,423 @@
       }
 
     }
+    /* ================================
+   Compressly — Modern Pastel Theme
+   ================================ */
+
+:root {
+  --bg: #f7f8ff;
+  --card: rgba(255, 255, 255, 0.88);
+  --text: #111827;
+  --muted: #667085;
+  --border: rgba(255, 255, 255, 0.75);
+  --primary: #635bff;
+  --primary-dark: #5146e5;
+  --soft-primary: #eef0ff;
+  --shadow: 0 24px 70px rgba(63, 70, 120, 0.13);
+}
+
+/* Main background */
+body {
+  position: relative;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(129, 140, 248, 0.28) 0,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 12%,
+      rgba(244, 114, 182, 0.20) 0,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 88%,
+      rgba(96, 165, 250, 0.20) 0,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 90%,
+      rgba(167, 139, 250, 0.16) 0,
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #f8f9ff 0%,
+      #f4f7ff 45%,
+      #faf7ff 100%
+    );
+
+  color: var(--text);
+}
+
+/* Soft decorative glow */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(12px);
+}
+
+body::before {
+  top: -100px;
+  left: -90px;
+  background: rgba(129, 140, 248, 0.16);
+}
+
+body::after {
+  right: -100px;
+  bottom: -100px;
+  background: rgba(244, 114, 182, 0.13);
+}
+
+/* Slightly more premium header */
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.header h1 {
+  text-shadow: 0 8px 30px rgba(79, 70, 229, 0.08);
+}
+
+.header h1 span {
+  background: linear-gradient(
+    135deg,
+    #635bff,
+    #7c5cff,
+    #ec6bb8
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Main application card */
+.app-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 30px 80px rgba(55, 65, 120, 0.12),
+    0 8px 30px rgba(99, 91, 255, 0.06);
+}
+
+/* Tabs */
+.tabs {
+  background: rgba(238, 240, 250, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.tab.active {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 5px 18px rgba(60, 70, 120, 0.08);
+}
+
+/* Upload area */
+.drop-zone {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(248, 249, 255, 0.92),
+      rgba(243, 244, 255, 0.78)
+    );
+
+  border-color: rgba(129, 140, 248, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(238, 240, 255, 0.98),
+      rgba(250, 240, 255, 0.92)
+    );
+
+  border-color: var(--primary);
+  box-shadow:
+    0 12px 35px rgba(99, 91, 255, 0.08);
+}
+
+/* Upload icon */
+.upload-icon {
+  background: rgba(255,255,255,.92);
+  box-shadow:
+    0 10px 30px rgba(70, 75, 130, 0.10);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    #635bff,
+    #705cff
+  );
+
+  box-shadow:
+    0 10px 25px rgba(99, 91, 255, 0.22);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    #574ee8,
+    #654ff0
+  );
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 14px 30px rgba(99, 91, 255, 0.28);
+}
+
+/* Smooth transitions */
+.app-card,
+.drop-zone,
+.btn,
+.tab {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page {
+    width: min(100% - 20px, 900px);
+    padding-top: 30px;
+  }
+
+  .app-card {
+    border-radius: 20px;
+  }
+
+  .panel {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  body::before,
+  body::after {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* =================================
+   Why Compressly + FAQ
+   ================================= */
+
+.why-compressly,
+.faq-section {
+  width: min(100% - 32px, 900px);
+  margin: 70px auto 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(99, 91, 255, 0.08);
+  color: #635bff;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  margin: 0 0 10px;
+  font-size: clamp(25px, 4vw, 34px);
+  letter-spacing: -0.5px;
+}
+
+.section-heading p {
+  margin: 0 auto;
+  max-width: 600px;
+  color: #667085;
+  line-height: 1.7;
+}
+
+/* Benefits */
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.benefit-card {
+  padding: 26px 22px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 18px 45px rgba(55, 65, 120, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(55, 65, 120, 0.12);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+  background: #eef0ff;
+
+  font-size: 23px;
+  margin-bottom: 18px;
+}
+
+.benefit-card h3 {
+  margin: 0 0 9px;
+  font-size: 18px;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: #667085;
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+/* Privacy */
+
+.privacy-note {
+  margin-top: 20px;
+  padding: 16px 20px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(99, 91, 255, 0.10);
+
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+.privacy-note strong {
+  color: #344054;
+}
+
+/* FAQ */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 17px;
+
+  box-shadow: 0 12px 35px rgba(55, 65, 120, 0.06);
+
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+
+  padding: 20px 22px;
+
+  font-weight: 700;
+  color: #1f2937;
+
+  list-style: none;
+
+  position: relative;
+  padding-right: 50px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+
+  position: absolute;
+  right: 22px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 22px;
+  font-weight: 400;
+  color: #635bff;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 22px 21px;
+
+  color: #667085;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-compressly,
+  .faq-section {
+    width: min(100% - 22px, 900px);
+    margin-top: 50px;
+  }
+
+  .benefit-card {
+    padding: 22px;
+  }
+}
   </style>
 
 </head>
@@ -1235,6 +1652,50 @@
 ```
 
   </main>
+  <section class="why-compressly">
+  <div class="section-heading">
+    <span class="section-badge">✨ Why Compressly?</span>
+    <h2>Simple, fast and privacy-friendly</h2>
+    <p>
+      Compress your files online without installing complicated software.
+    </p>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3>Fast & Easy</h3>
+      <p>
+        Upload your file, choose your compression level, and get your result
+        in just a few clicks.
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🔒</div>
+      <h3>Privacy Friendly</h3>
+      <p>
+        Files are processed temporarily and are not intended to be stored
+        permanently.
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">💻</div>
+      <h3>No Installation</h3>
+      <p>
+        Compress PDFs and images directly from your browser on desktop or
+        mobile.
+      </p>
+    </div>
+  </div>
+
+  <div class="privacy-note">
+    🔒 <strong>Your privacy matters.</strong>
+    Files sent for PDF compression are temporarily processed through our
+    compression service and removed after processing.
+  </div>
+</section>
 
   <section class="content-section" aria-labelledby="why-compressly">
     <h2 id="why-compressly">Free online file compression</h2>
@@ -1245,6 +1706,60 @@
       <a href="/about.html">About Compressly</a>
     </div>
   </section>
+  <section class="faq-section">
+  <div class="section-heading">
+    <span class="section-badge">❓ FAQ</span>
+    <h2>Frequently asked questions</h2>
+    <p>Everything you need to know about Compressly.</p>
+  </div>
+
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary>How do I compress a PDF?</summary>
+      <p>
+        Select the PDF tab, upload your file, choose a compression level,
+        and click Compress PDF. Your compressed file will be available
+        when processing is complete.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I compress images?</summary>
+      <p>
+        Yes. Compressly supports common image formats such as JPG, PNG,
+        and WebP directly in your browser.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is Compressly free?</summary>
+      <p>
+        Compressly is designed as a free online compression tool. Some
+        processing features may depend on the services used behind the
+        scenes.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Are my files stored?</summary>
+      <p>
+        Files used for PDF processing are temporarily sent through the
+        backend and compression service. Temporary processing files are
+        removed after the operation is completed.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need to install anything?</summary>
+      <p>
+        No. Compressly works through your web browser, so there is no
+        desktop application required.
+      </p>
+    </details>
+
+  </div>
+</section>
 
   <footer class="footer">
     <div class="footer-links">
